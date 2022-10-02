@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1 class="header-title">Bài tập 1 - 20120493</h1>
+            <div class="nav">
+                <ul class="nav-list-menu">
+                    <li class="nav-menu-item" onclick="isSelectedMenu('nav-menu-item', 0)">Menu 1</li>
+                    <li class="nav-menu-item" onclick="isSelectedMenu('nav-menu-item', 1)">Menu 2</li>
+                    <li class="nav-menu-item" onclick="isSelectedMenu('nav-menu-item', 2)">Menu 3</li>
+                    <li class="nav-menu-item" onclick="isSelectedMenu('nav-menu-item', 3)">Menu 4</li>
+                    <li class="nav-menu-item" onclick="isSelectedMenu('nav-menu-item', 4)">Menu 5</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- MAIN -->
+        <div class="main">
+            <h1 class="main-title">ĐĂNG KÝ HỌC PHẦN</h1>
+            <form id="main-form">
+                <div class="row-form">
+                    <p class="form-title-element">Mã số:</p>
+                    <input id="Ma_so" type="text">
+                </div>
+                <div class="row-form">
+                    <p class="form-title-element">Họ và tên:</p>
+                    <input id="Ho_ten" type="text">
+                </div>
+                <div class="row-form">
+                    <p class="form-title-element">Địa chỉ:</p>
+                    <input id="Dia_chi" type="text">
+                </div>
+                <div class="row-form">
+                    <p class="form-title-element">Điện thoại:</p>
+                    <input id="Dien_thoai" type="text">
+                </div>
+                <div class="row-form">
+                    <p class="form-title-element">Giới tính:</p>
+                    <div class="box-radio">
+                        <input id="Gioi_tinh" type="radio" name="Gioi_tinh">
+                        <p>Nam</p>
+                        <input id="Gioi_tinh" type="radio" name="Gioi_tinh">
+                        <p>Nữ</p>
+                    </div>
+                </div>
+                <div class="row-form">
+                    <p class="form-title-element">Ngày sinh:</p>
+                    <input id="Ngay_sinh" type="date">
+                </div>
+                <div class="row-form">
+                    <p class="form-title-element">Email:</p>
+                    <input id="Email" type="text">
+                </div>
+            </form>
+
+            <div class="subject-title-box">
+                <p class="subject-title">Các môn học</p>
+                <p class="subject-title-picked">Các môn học đã chọn</p>
+            </div>
+
+            <div class="subject-container">
+                <div class="subject-box">
+                    <div id="0" class="subject" onclick="isSelectedSubject('0')">Lập Trình Hướng Đối Tượng</div>
+                    <div id="1" class="subject" onclick="isSelectedSubject('1')">Cấu Trúc Dữ Liệu</div>
+                    <div id="2" class="subject" onclick="isSelectedSubject('2')">Lập trình Windows</div>
+                    <div id="3" class="subject" onclick="isSelectedSubject('3')">NM Công Nghệ Phần Mềm</div>
+                    <div id="4" class="subject" onclick="isSelectedSubject('4')">Trí Tuệ Nhân Tạo</div>
+                    <div id="5" class="subject" onclick="isSelectedSubject('5')">Phát Triển Ứng Dụng Web</div>
+                    <div id="6" class="subject" onclick="isSelectedSubject('6')">Cơ Sở Dữ Liệu</div>
+                    <div id="7" class="subject" onclick="isSelectedSubject('7')">Nhập Môn Lập Trình</div>
+                    <div id="8" class="subject" onclick="isSelectedSubject('8')">Kỹ Thuật Lập Trình</div>
+                    <div id="9" class="subject" onclick="isSelectedSubject('9')">Lập trình Ứng Dụng Java</div>
+                </div>
+                <div class="list-button-nav">
+                    <button class="right button-nav-item">></button>
+                    <button class="double-right button-nav-item" onclick="pressDoubleRight()">>></button>
+                    <button class="left button-nav-item"><</button>
+                    <button class="double-left button-nav-item" onclick="pressDoubleLeft()"><<</button>
+                </div>
+                
+                <div class="subject-picked-box">
+                    
+                </div>
+            </div>
+
+            <div class="button-box">
+                <button class="register" onclick="Validation_btn()">Đăng ký</button>
+                <button type="reset" form="main-form" class="delete-all">Xóa hết</button>
+            </div>
+            <table class="table-student" style="width:100%">
+                <tr>
+                    <th>Mã số</th>
+                    <th>Họ và tên</th>
+                    <th>Giới tính</th>
+                    <th>Ngày sinh</th>
+                </tr>
+                <tr>
+                    <td class="odd">20120001</td>
+                    <td class="odd">Nguyễn Thị A</td>
+                    <td class="odd">Nữ</td>
+                    <td class="odd">07/08/2002</td>
+                </tr>
+                <tr>
+                    <td class="even">20120123</td>
+                    <td class="even">Trần Văn C</td>
+                    <td class="even">Nam</td>
+                    <td class="even">12/24/2002</td>
+                </tr>
+                <tr>
+                    <td class="odd">20120274</td>
+                    <td class="odd">Lê Văn G</td>
+                    <td class="odd">Nam</td>
+                    <td class="odd">06/13/2002</td>
+                </tr>
+                <tr>
+                    <td class="even">20120634</td>
+                    <td class="even">Ngô Thị E</td>
+                    <td class="even">Nữ</td>
+                    <td class="even">10/10/2002</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- SIDE -->
+        <div class="side">
+            <div class="news">
+                <div id="n1" class="news-title" onclick="isOpenClose('n1','01')">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+                    NEWS 01
+                </div>
+                <div id="01" class="news-title-content">
+                    content content content content content
+                    content content content content content
+                    content content content content 
+                </div>
+            </div>
+            <div class="news">
+                <div id="n2" class="news-title" onclick="isOpenClose('n2','02')">
+                    <i class="ui-icon ui-icon-arrowthick-2-n-s"></i>
+                    NEWS 02
+                </div>
+                <div id="02" class="news-title-content">
+                    content content content content content
+                    content content content content content
+                    content content content content content
+                    content content content content content
+                    content content content content 
+                </div>
+            </div>
+            <div class="news">
+                <div id="n3" class="news-title" onclick="isOpenClose('n3','03')">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+                    NEWS 03
+                </div>
+                <div id="03" class="news-title-content">
+                    content content content content content
+                    content content content content content
+                    content content content content content
+                    content content content content content
+                    content content content content content
+                    content content content 
+                </div>
+            </div>
+            <div class="news">
+                <div id="n4" class="news-title" onclick="isOpenClose('n4','04')">
+                    <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+                    NEWS 04
+                </div>
+                <div id="04" class="news-title-content">
+                    content content content content content
+                    content content content 
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <p class="footer-title">Copyright © Huỳnh Trần Quang Huy</p>
+            <ul class="footer-list-menu">
+                <li class="menu-item menu-item-separate" onclick="isSelectedMenu('menu-item', 0)">Menu 1</li>
+                <li class="menu-item menu-item-separate" onclick="isSelectedMenu('menu-item', 1)">Menu 2</li>
+                <li class="menu-item menu-item-separate" onclick="isSelectedMenu('menu-item', 2)">Menu 3</li>
+                <li class="menu-item menu-item-separate" onclick="isSelectedMenu('menu-item', 3)">Menu 4</li>
+                <li class="menu-item" onclick="isSelectedMenu('menu-item', 4)">Menu 5</li>
+            </ul>
+        </div>
+    </div>
+    <script src="./JS/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( ".side" ).sortable();
+        });
+    </script>
+</body>
+</html>
